@@ -42,7 +42,9 @@ class RefreshView: UIView {
   // 当刷新工作完成之后调用
   func endRefreshing() {
     isRefreshing = false
-    shouldRefreshViewBeLocked(false)
+    UIView.animateWithDuration(0.3, delay: 0.0, options: [.CurveEaseOut], animations: {
+      self.shouldRefreshViewBeLocked(false)
+      }, completion: nil)
   }
   
   func shouldRefreshViewBeLocked(shouldLock: Bool) {
